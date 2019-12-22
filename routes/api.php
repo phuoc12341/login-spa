@@ -26,3 +26,9 @@ Route::group(['namespace' => 'Api', 'prefix' => 'v1', 'as' => 'api.v1.'], functi
         });
     });
 });
+
+Route::post('/users', function (Request $request) {
+
+    return response()->json(['name' => 'Behrang No']);
+
+});

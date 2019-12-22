@@ -8,6 +8,10 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import Vue from 'vue';
+import router from './router/index.js';
+import store from './store/index.js';
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -21,20 +25,8 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
-Vue.component(
-    'passport-clients',
-    require('./components/passport/Clients.vue').default
-);
-
-Vue.component(
-    'passport-authorized-clients',
-require('./components/passport/AuthorizedClients.vue').default
-);
-
-Vue.component(
-    'passport-personal-access-tokens',
-    require('./components/passport/PersonalAccessTokens.vue').default
-);
+Vue.component('profile-component', require('./components/ProfileComponent.vue').default);
+Vue.component('login-component', require('./components/auth/LoginComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -44,4 +36,7 @@ Vue.component(
 
 const app = new Vue({
     el: '#app',
-});
+    store,
+    router,
+}).$mount('#app');
+

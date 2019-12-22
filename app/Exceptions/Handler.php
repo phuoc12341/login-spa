@@ -12,7 +12,7 @@ use App\Exceptions\Api\UnknownException;
 
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Validation\ValidationException;
-
+use Illuminate\Http\Response;
 
 class Handler extends ExceptionHandler
 {
