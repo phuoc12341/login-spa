@@ -19,7 +19,7 @@ class AuthResource extends ApiResource
 
     public function login()
     {
-        return $this->resource;
+        return ['token' => $this->resource];
     }
 
     public function logout()

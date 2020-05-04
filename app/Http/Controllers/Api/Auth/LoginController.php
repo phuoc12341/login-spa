@@ -41,7 +41,10 @@ class LoginController extends PassportController
             'password' => $params['password'],
         ];
 
-        $token = $this->passportIssueToken($loginData);
+        if ($this->authService->attempt($request)) {
+            $user = Auth::user();
+            $token = $user->createToken('mytoken')->accessToken;
+        }
 
         return new AuthResource($token, __FUNCTION__);
     }

@@ -36,3 +36,5 @@ Route::group(['namespace' => 'Web'], function () {
     Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->name('verification.verify');
     Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 });
+
+Route::get('test', 'Web\Auth\LoginController@test')->name('test');

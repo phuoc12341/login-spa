@@ -148,4 +148,9 @@ class LoginController extends WebController
     {
         //
     }
+
+    public function test()
+    {
+        return view('test');
+    }
 }
